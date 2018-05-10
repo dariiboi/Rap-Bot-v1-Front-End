@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2632B08120A1D64E0003E616 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2632B08020A1D64E0003E616 /* SettingsViewController.swift */; };
 		2656AA26209B668F006B4395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2656AA25209B668F006B4395 /* AppDelegate.swift */; };
 		2656AA28209B668F006B4395 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2656AA27209B668F006B4395 /* ViewController.swift */; };
 		2656AA2B209B668F006B4395 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2656AA29209B668F006B4395 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2632B08020A1D64E0003E616 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2656AA22209B668F006B4395 /* Rap Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rap Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2656AA25209B668F006B4395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2656AA27209B668F006B4395 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				2656AA25209B668F006B4395 /* AppDelegate.swift */,
 				2656AA27209B668F006B4395 /* ViewController.swift */,
+				2632B08020A1D64E0003E616 /* SettingsViewController.swift */,
 				2656AA29209B668F006B4395 /* Main.storyboard */,
 				2656AA2C209B668F006B4395 /* Assets.xcassets */,
 				2656AA2E209B668F006B4395 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2632B08120A1D64E0003E616 /* SettingsViewController.swift in Sources */,
 				2656AA28209B668F006B4395 /* ViewController.swift in Sources */,
 				2656AA26209B668F006B4395 /* AppDelegate.swift in Sources */,
 			);

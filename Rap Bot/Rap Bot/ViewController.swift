@@ -15,10 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var rapTextField: UITextView!
     var joinedStrings = ""
     var charCounter = 0
+    var lineLength = 9
+    var lineNumber = 8
+    var rhymeScheme = "AB"
+    var wackness = Float(0.7)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.seed.text = "gun"
         self.rapTextField.text = "Hit generate to produce a rap!!"
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -26,11 +31,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
 
     @IBAction func generatePressed(_ sender: Any) {
-        //send a URL request
         if self.charCounter == 0 {
-            url = URL(string: "http://localhost:8080/generate?rhymeScheme=4&seedWord=\(self.seed.text ?? "gun")")
+            url = URL(string: "http://localhost:8080/generate?rhymeScheme=4&syllableRange=\(lineLength)&maxLines=\(lineNumber)&ChanceOfMostRealisticChain=\(wackness)&seedWord=\(self.seed.text ?? "gun")")
             let task = URLSession.shared.dataTask(with: url!) { data, response, error in
                 guard error == nil else {
                     print(error!)
@@ -60,7 +66,7 @@ class ViewController: UIViewController {
     func apiPrint(joinedText: String){     //print the text in the word box
         self.charCounter = 0
         self.rapTextField.text = ""
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true) { (timer) in
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.012, repeats: true) { (timer) in
             self.rapTextField.text = self.rapTextField.text + String(joinedText[joinedText.index(joinedText.startIndex, offsetBy: self.charCounter)])
             self.charCounter += 1
             if self.charCounter == joinedText.count {

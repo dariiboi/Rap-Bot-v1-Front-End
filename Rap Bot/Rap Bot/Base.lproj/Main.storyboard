@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rap_Bot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rap_Bot" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
                                     <navigationItem title="Rap Bot" largeTitleDisplayMode="always" id="Mez-2B-U1d">
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="sb6-F6-a1M">
                                             <connections>
-                                                <segue destination="wn6-7S-cvf" kind="show" identifier="Segue1" id="Hqb-BN-OJf"/>
+                                                <segue destination="wn6-7S-cvf" kind="presentation" identifier="Segue1" id="hG8-FE-HgE"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -76,12 +76,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+            <point key="canvasLocation" x="-20" y="33"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="WB1-jO-B7K">
             <objects>
-                <viewController id="wn6-7S-cvf" customClass="SettingsViewController" customModule="Rap_Bot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wn6-7S-cvf" customClass="SettingsViewController" customModule="Rap_Bot" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M3K-1m-nOc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,17 +91,20 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Settings" id="J93-I6-ViM">
-                                        <barButtonItem key="leftBarButtonItem" title="Home" id="2Dn-SY-Son">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="2Dn-SY-Son">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="Segue2" id="eMT-z0-vHE"/>
+                                                <action selector="exitSettings:" destination="wn6-7S-cvf" id="DcB-iH-94Z"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="0kP-QL-Umn">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="9" minValue="2" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="0kP-QL-Umn">
                                 <rect key="frame" x="14" y="142" width="154" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="lineLengthSlider:" destination="wn6-7S-cvf" eventType="valueChanged" id="BPm-Aa-6Qf"/>
+                                </connections>
                             </slider>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Line Length" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccU-ri-x5j">
                                 <rect key="frame" x="43" y="65" width="97" height="30"/>
@@ -117,24 +120,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DR-Ep-Rsq">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DR-Ep-Rsq">
                                 <rect key="frame" x="73" y="104" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fut-9Z-oJc">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="AB" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fut-9Z-oJc">
                                 <rect key="frame" x="266" y="104" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="2VC-9q-vRY">
-                                <rect key="frame" x="14" y="256" width="154" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number of Lines" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-jl-jpl">
                                 <rect key="frame" x="16" y="179" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -142,7 +141,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-Fn-Nzm">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-Fn-Nzm">
                                 <rect key="frame" x="73" y="218" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -156,12 +155,18 @@
                                     <segment title="A"/>
                                     <segment title="AB"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlchange:" destination="wn6-7S-cvf" eventType="valueChanged" id="xP5-7G-gAa"/>
+                                </connections>
                             </segmentedControl>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kS1-vI-YOP">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.10000000000000001" maxValue="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="kS1-vI-YOP">
                                 <rect key="frame" x="207" y="256" width="154" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="randomnessSlider:" destination="wn6-7S-cvf" eventType="valueChanged" id="GnY-L7-Pxa"/>
+                                </connections>
                             </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOK-mk-Nly">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.7" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOK-mk-Nly">
                                 <rect key="frame" x="266" y="216" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -175,15 +180,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="1" maxValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="2VC-9q-vRY">
+                                <rect key="frame" x="14" y="256" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="lineNumberSlider:" destination="wn6-7S-cvf" eventType="valueChanged" id="6t8-1h-e3p"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="WjY-S0-sjw"/>
                     </view>
                     <connections>
-                        <outlet property="lineLength" destination="0kP-QL-Umn" id="UJo-RM-JdX"/>
-                        <outlet property="numberLines" destination="2VC-9q-vRY" id="WOs-OV-tBu"/>
-                        <outlet property="randomnessValue" destination="kS1-vI-YOP" id="DOx-aC-MdM"/>
-                        <outlet property="rhymeScheme" destination="6c8-qv-cpl" id="wFX-U6-2oU"/>
+                        <outlet property="lineLengthValue" destination="6DR-Ep-Rsq" id="6a9-jc-j47"/>
+                        <outlet property="lineNumberValue" destination="e1M-Fn-Nzm" id="zO2-Na-TjL"/>
+                        <outlet property="randomnessValue" destination="oOK-mk-Nly" id="Fez-Mn-o1y"/>
+                        <outlet property="rhymeSchemeValue" destination="fut-9Z-oJc" id="kbX-OY-J0T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7S-Cy-XFe" userLabel="First Responder" sceneMemberID="firstResponder"/>

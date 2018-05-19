@@ -26,8 +26,8 @@
                                     <action selector="generatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JUV-5A-1MA"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vWu-dJ-8nV">
-                                <rect key="frame" x="16" y="154" width="343" height="422"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vWu-dJ-8nV">
+                                <rect key="frame" x="16" y="154" width="343" height="493"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -35,10 +35,10 @@
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <attributes>
                                             <font key="NSFont" size="12" name="Courier"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -51,6 +51,7 @@
                                     <navigationItem title="Rap Bot" largeTitleDisplayMode="always" id="Mez-2B-U1d">
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="sb6-F6-a1M">
                                             <connections>
+                                                <action selector="prepareForSegue:" destination="BYZ-38-t0r" id="VYR-Qt-lDW"/>
                                                 <segue destination="wn6-7S-cvf" kind="presentation" identifier="Segue1" id="hG8-FE-HgE"/>
                                             </connections>
                                         </barButtonItem>
@@ -60,6 +61,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="INSERT SEED" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rtq-xM-YHf">
                                 <rect key="frame" x="133" y="116" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -76,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="33"/>
+            <point key="canvasLocation" x="-20" y="32.833583208395808"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="WB1-jO-B7K">
@@ -148,7 +152,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6c8-qv-cpl">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6c8-qv-cpl">
                                 <rect key="frame" x="224" y="143" width="121" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -192,9 +196,13 @@
                         <viewLayoutGuide key="safeArea" id="WjY-S0-sjw"/>
                     </view>
                     <connections>
+                        <outlet property="lineLengthSliderValue" destination="0kP-QL-Umn" id="fXy-46-NIk"/>
                         <outlet property="lineLengthValue" destination="6DR-Ep-Rsq" id="6a9-jc-j47"/>
+                        <outlet property="lineNumberSliderValue" destination="2VC-9q-vRY" id="7Hv-72-zBX"/>
                         <outlet property="lineNumberValue" destination="e1M-Fn-Nzm" id="zO2-Na-TjL"/>
+                        <outlet property="randomnessSliderValue" destination="kS1-vI-YOP" id="fWx-Ua-au2"/>
                         <outlet property="randomnessValue" destination="oOK-mk-Nly" id="Fez-Mn-o1y"/>
+                        <outlet property="rhymeSchemeSwitchValue" destination="6c8-qv-cpl" id="kfj-Ub-nwp"/>
                         <outlet property="rhymeSchemeValue" destination="fut-9Z-oJc" id="kbX-OY-J0T"/>
                     </connections>
                 </viewController>

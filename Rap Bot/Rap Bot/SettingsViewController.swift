@@ -10,7 +10,15 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-
+    var lineLength = 9
+    var lineNumber = 8
+    var randomness = Float(0.5)
+    var rhymeScheme = "AB"
+    @IBOutlet weak var lineLengthSliderValue: UISlider!
+    
+    @IBOutlet weak var rhymeSchemeSwitchValue: UISegmentedControl!
+    @IBOutlet weak var randomnessSliderValue: UISlider!
+    @IBOutlet weak var lineNumberSliderValue: UISlider!
     @IBOutlet weak var randomnessValue: UITextField!
     @IBOutlet weak var lineNumberValue: UITextField!
     @IBOutlet weak var rhymeSchemeValue: UITextField!
@@ -41,7 +49,20 @@ class SettingsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lineLengthSliderValue.value = Float(self.lineLength)
+        lineLengthValue.text = String(self.lineLength)
+        lineNumberSliderValue.value = Float(self.lineNumber)
+        lineNumberValue.text = String(self.lineNumber)
+        randomnessSliderValue.value = Float(self.randomness)
+        randomnessValue.text = String(self.randomness)
+        if rhymeScheme == "AB"{
+            rhymeSchemeValue.text = "AB"
+            rhymeSchemeSwitchValue.selectedSegmentIndex = 1
+        }
+        else{
+            rhymeSchemeValue.text = "A"
+            rhymeSchemeSwitchValue.selectedSegmentIndex = 0
+        }
         // Do any additional setup after loading the view.
     }
 
